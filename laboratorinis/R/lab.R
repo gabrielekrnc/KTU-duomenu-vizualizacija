@@ -25,6 +25,8 @@ filtered %>%
   geom_histogram(bins = 100, fill='navy', alpha = 0.6, col = 'white') +
   labs(title = 'Vidutinių atlyginimų histograma', x = 'Average wage', y = 'Count') +
   theme(plot.title = element_text(hjust = 0.5, size = rel(2)),
+        axis.text = element_text(size = 20),
+        axis.title = element_text(size = 24, face = "bold"),
         panel.background = element_rect(fill = "grey90"),
         plot.margin = margin(2,2,2,2, "cm"),
         plot.background = element_rect(fill = "grey95", colour = "navy",  linewidth = 2)
@@ -59,7 +61,9 @@ top5_d %>%
   scale_x_continuous(breaks = 1:12) +
   labs(title = 'Vidutinio atlyginimo kitimo dinamika metų eigoje', x = 'Month', y = 'Average wage', col = 'Companies') +
   theme(plot.title = element_text(hjust = 0.5, size = rel(2)),
-        legend.text = element_text(size = 7), legend.title = element_text(size = 8),
+        axis.text = element_text(size = 20),
+        axis.title = element_text(size = 24, face = "bold"),
+        legend.text = element_text(size = 16), legend.title = element_text(size = 20),
         panel.background = element_rect(fill = "grey90"),
         plot.margin = margin(2,2,2,2, "cm"),
         plot.background = element_rect(fill = "grey95", colour = "navy", linewidth = 2),
@@ -83,7 +87,9 @@ maxIns %>%
   geom_label(aes(name, label = maxInsured), fill = 'grey50',size = 10, color = 'white')+
   labs(title = 'Maksimalus apdraustųjų darbuotojų skaičius per metus', x = 'Company', y = 'Max insured')+
   theme(plot.title = element_text(hjust = 0.5, size = rel(2)),
-        legend.text = element_text(size = 7), legend.title = element_text(size = 8),
+        axis.text.x = element_text(size = 12),
+        axis.text.y = element_text(size = 20),
+        axis.title = element_text(size = 24, face = "bold"),
         panel.background = element_rect(fill = "grey90"),
         plot.margin = margin(2,2,2,2, "cm"),
         plot.background = element_rect(fill = "grey95", colour = "navy", linewidth = 2),
