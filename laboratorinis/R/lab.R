@@ -37,7 +37,7 @@ dev.off()
 #'Antra užduotis
 #'5 įmonių vidutinio atlyginimo kitimo dinamika metų eigoje
 
-top5 <- data %>% 
+top5 <- filtered %>% 
   group_by(name) %>% 
   summarise(avgWage = mean(avgWage)) %>% 
   arrange(desc(avgWage)) %>% 
@@ -57,13 +57,14 @@ euro <- label_dollar(
 top5_d %>% 
   ggplot(aes(month, avgWage)) +
   geom_line(aes(col = name), linewidth = 1) +
+  geom_point(color = "white", size = 1)+
   scale_y_continuous(labels = euro)+
   scale_x_continuous(breaks = 1:12) +
   labs(title = 'Vidutinio atlyginimo kitimo dinamika metų eigoje', x = 'Month', y = 'Average wage', col = 'Companies') +
   theme(plot.title = element_text(hjust = 0.5, size = rel(2)),
         axis.text = element_text(size = 20),
         axis.title = element_text(size = 24, face = "bold"),
-        legend.text = element_text(size = 16), legend.title = element_text(size = 20),
+        legend.text = element_text(size = 14), legend.title = element_text(size = 16),
         panel.background = element_rect(fill = "grey90"),
         plot.margin = margin(2,2,2,2, "cm"),
         plot.background = element_rect(fill = "grey95", colour = "navy", linewidth = 2),
